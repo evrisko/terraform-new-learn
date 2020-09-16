@@ -2,6 +2,7 @@ provider "aws" {
   region = "eu-central-1"
 }
 
+#Create static IP
 resource "aws_eip" "my_static_ip" {
   instance = aws_instance.my_webserver.id
   tags = {
@@ -9,6 +10,7 @@ resource "aws_eip" "my_static_ip" {
   }
 }
 
+# Create instance
 resource "aws_instance" "my_webserver" {
   ami                    = "ami-08c148bb835696b45" # Amazon Linux ami
   instance_type          = "t2.micro"
@@ -26,6 +28,7 @@ resource "aws_instance" "my_webserver" {
   }
 }
 
+# Create Security Group
 resource "aws_security_group" "my_webserver" {
   name        = "Webserver Security Group"
   description = "Allow HTTP HTTPS"
