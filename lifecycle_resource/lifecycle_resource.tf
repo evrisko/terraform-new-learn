@@ -52,3 +52,6 @@ resource "aws_security_group" "my_webserver" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+#terraform show
+#terraform output
