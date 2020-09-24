@@ -1,5 +1,6 @@
 #green-blue deployment
 #Zero down time
+#test
 provider "aws" {}
 
 data "aws_availability_zones" "available" {}
